@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.menu div:hover{
+    color: blue;
+    cursor: pointer;
+}
+
+.gridContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.gridContainer2{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.card{
+    text-align: center;
+    background-color: lightblue;
+}
+
+@media (max-width: 600px) {
+    .gridContainer2 {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,90 @@
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    height: 10vh;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+.menu {
+    background-color: #ddd;
+    padding: 20px;
+}
+
+.menu ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.vendas {
+    background-color: blue;
+}
+
+.usuarios {
+    background-color: green;
+}
+
+.pedidos {
+    background-color: orange;
+}
+
+.estoque {
+    background-color: purple;
+}
+
+.financeiro {
+    background-color: red;
+}
+
+.alertas {
+    background-color: brown;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .menu ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
