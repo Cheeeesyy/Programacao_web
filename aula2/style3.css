@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 24px;
+    background-color: #f0edf7;
+    color: #30283f;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #563b80;
+}
+
+.perfil {
+    box-sizing: border-box;
+    width: 500px;
+    max-width: 100%;
+    margin: 32px auto;
+    padding: 28px;
+    background-color: white;
+    border: 1px solid #cfc3e0;
+    border-radius: 12px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+.tecnologia {
+    display: inline-block;
+    margin: 0 6px 10px 0;
+    padding: 6px 12px;
+    background-color: #eee7f7;
+    border: 1px solid #d6c8e8;
+    border-radius: 6px;
+}
+
+.link-contato {
+    display: inline-block;
+    margin-top: 8px;
+    color: #563b80;
+    font-weight: bold;
+}
+
+.link-contato:hover {
+    color: #a52d53;
+}
+
+.contato {
+    box-sizing: border-box;
+    width: 500px;
+    max-width: 100%;
+    margin: 24px auto;
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #cfc3e0;
+    border-radius: 12px;
+}
