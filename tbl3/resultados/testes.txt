@@ -1,0 +1,48 @@
+TBL 3 - REGISTRO DOS TESTES
+
+Ambiente: Node.js v24.22.1, Express 5.1.0, cors 2.8.5.
+Navegador: Chromium 153.0.8010.0 (headless).
+Os testes utilizaram os arquivos incluídos no ZIP.
+
+EXERCÍCIO 1
+GET /usuarios: HTTP 200.
+Access-Control-Allow-Origin: *
+Leitura no navegador em localhost:5500 e localhost:5501: permitida.
+
+EXERCÍCIO 2 - SEM CORS
+Cliente HTTP fora do navegador: HTTP 200.
+Cabeçalho Access-Control-Allow-Origin: ausente.
+Leitura pelo JavaScript em localhost:5500: bloqueada.
+Mensagem do navegador:
+Access to fetch at 'http://localhost:3000/usuarios' from origin 'http://localhost:5500' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+EXERCÍCIO 2 - CORS REATIVADO
+Leitura pelo JavaScript em localhost:5500: permitida.
+Retorno: [{"id":1,"nome":"Ana"}]
+
+EXERCÍCIO 3
+Leitura em localhost:5500: permitida.
+Leitura em localhost:5501: bloqueada.
+Mensagem do navegador:
+Access to fetch at 'http://localhost:3000/usuarios' from origin 'http://localhost:5501' has been blocked by CORS policy: The 'Access-Control-Allow-Origin' header has a value 'http://localhost:5500' that is not equal to the supplied origin. Have the server send the header with a valid value.
+
+EXERCÍCIO 4
+GET /usuarios: HTTP 200.
+Valor emitido por console.log(dados):
+[
+  {
+    "id": 1,
+    "nome": "Ana"
+  }
+]
+
+EXERCÍCIO 5
+GET em localhost:5500: permitido.
+Preflight OPTIONS para DELETE: HTTP 204.
+Access-Control-Allow-Origin: http://localhost:5500
+Access-Control-Allow-Methods: GET
+DELETE pelo navegador: bloqueado no preflight.
+POST simples pelo navegador: resposta HTTP 404 legível, pois a API não possui rota POST.
+Esse último teste confirma que methods: [GET] não bloqueia sozinho todos os métodos no servidor.
+
+Todos os testes foram concluídos.

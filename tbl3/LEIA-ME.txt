@@ -1,0 +1,104 @@
+TBL 3 - EXERCÍCIOS DE CORS
+
+O arquivo Respostas_TBL3.pdf reúne as respostas dos cinco exercícios.
+Os códigos estão separados nas pastas exercicio1 a exercicio5.
+Os registros dos testes estão na pasta resultados.
+
+PREPARAÇÃO
+
+1. Tenha o Node.js com npm instalado, na versão 18 ou superior.
+2. Extraia este ZIP.
+3. Abra o terminal dentro da pasta TBL3_CORS, onde está o package.json.
+As dependências Express, cors e os pacotes utilizados por elas já estão na
+pasta node_modules. Não é necessário executar npm install nem baixar pacotes
+para rodar os exercícios. O Node.js é o programa que executa os arquivos e
+precisa estar instalado no computador.
+
+Não exclua a pasta node_modules ao extrair o ZIP. Os comandos abaixo podem
+ser usados diretamente, inclusive sem conexão com a internet.
+
+COMO EXECUTAR
+
+Execute apenas um backend por vez, pois todos usam a porta 3000.
+Antes de trocar de exercício, encerre o backend atual com Ctrl+C.
+
+Em outro terminal, na mesma pasta, execute:
+
+   npm run frontend
+
+Abra http://localhost:5500 no navegador e use F12 para abrir o console.
+O mesmo HTML consulta a rota /usuarios dos cinco exercícios.
+Após trocar o backend, recarregue a página.
+
+EXERCÍCIO 1
+
+No terminal do backend:
+
+   npm run ex1
+
+Acesse o frontend. A consulta deve retornar o usuário Ana.
+A configuração app.use(cors()) permite a leitura a partir de outras origens.
+
+EXERCÍCIO 2
+
+Comece com:
+
+   npm run ex2-sem-cors
+
+Recarregue o frontend e observe o erro de CORS no console.
+A URL http://localhost:3000/usuarios continua respondendo quando acessada
+diretamente; o bloqueio acontece na leitura pelo JavaScript do frontend.
+
+Encerre esse backend com Ctrl+C e execute:
+
+   npm run ex2-com-cors
+
+Recarregue a página. A consulta deve funcionar novamente.
+
+EXERCÍCIO 3
+
+Execute:
+
+   npm run ex3
+
+O frontend em http://localhost:5500 consegue ler a resposta.
+Para testar uma origem diferente, abra um terceiro terminal e execute:
+
+   npm run frontend-outra-origem
+
+Abra http://localhost:5501 e observe o bloqueio de CORS.
+Encerre esse frontend extra com Ctrl+C depois do teste.
+
+EXERCÍCIO 4
+
+Execute:
+
+   npm run ex4
+
+Mantenha npm run frontend no segundo terminal e abra http://localhost:5500.
+O HTML está em exercicio4/index.html. O resultado aparece na página e no
+console. O registro do console está em resultados/console_exercicio4.txt.
+
+EXERCÍCIO 5
+
+Execute:
+
+   npm run ex5
+
+O GET do frontend em http://localhost:5500 continua funcionando.
+O CORS informa GET no cabeçalho Access-Control-Allow-Methods do preflight.
+A explicação dos limites dessa configuração está no PDF de respostas.
+
+SE A CONSULTA FALHAR
+
+- Confira se o backend está rodando na porta 3000.
+- Use exatamente http://localhost:5500. O endereço 127.0.0.1 é outro host.
+- Sirva o HTML pelo comando indicado; não o abra com duplo clique.
+- Não inicie dois backends ao mesmo tempo.
+
+REFERÊNCIAS
+
+- Material de apoio fornecido: materialTBL3(1).pdf.
+- Enunciados fornecidos: exTBL3(1).pdf.
+- Middleware cors: https://expressjs.com/en/resources/middleware/cors/
+- Padrão Fetch: https://fetch.spec.whatwg.org/#cors-preflight-fetch

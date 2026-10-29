@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de usuários</title>
+</head>
+<body>
+  <h1>Usuários</h1>
+  <p>O resultado também aparece no console do navegador (F12).</p>
+  <pre id="resultado">Consultando a API...</pre>
+
+  <script>
+    fetch('http://localhost:3000/usuarios')
+      .then(res => res.json())
+      .then(dados => {
+        console.log(dados);
+        document.getElementById('resultado').textContent =
+          JSON.stringify(dados, null, 2);
+      })
+      .catch(erro => {
+        console.error(erro);
+        document.getElementById('resultado').textContent =
+          'Não foi possível consultar a API.';
+      });
+  </script>
+</body>
+</html>

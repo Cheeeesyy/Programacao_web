@@ -1,0 +1,20 @@
+{
+  "name": "tbl3-cors",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exercícios de CORS com Node.js e Express",
+  "scripts": {
+    "ex1": "node exercicio1/server.js",
+    "ex2-sem-cors": "node exercicio2/sem-cors.js",
+    "ex2-com-cors": "node exercicio2/com-cors.js",
+    "ex3": "node exercicio3/server.js",
+    "ex4": "node exercicio4/server.js",
+    "ex5": "node exercicio5/server.js",
+    "frontend": "node servir-frontend.js 5500",
+    "frontend-outra-origem": "node servir-frontend.js 5501"
+  },
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "5.1.0"
+  }
+}

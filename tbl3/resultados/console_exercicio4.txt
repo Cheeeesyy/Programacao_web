@@ -1,0 +1,15 @@
+EXERCÍCIO 4 - RESULTADO NO CONSOLE
+
+Página: http://localhost:5500
+Requisição: GET http://localhost:3000/usuarios
+Resposta: HTTP 200
+
+Valor emitido por console.log(dados), com o objeto expandido:
+[
+  {
+    "id": 1,
+    "nome": "Ana"
+  }
+]
+
+O mesmo valor foi exibido no elemento resultado da página.
